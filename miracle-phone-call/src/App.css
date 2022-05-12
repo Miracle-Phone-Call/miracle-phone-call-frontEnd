@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.landing-container {
+  width: 500px;
+  height: 500px;
+  background-color: orange;
+}
+
+.landing-body {
+  display: flex;
+}
+
+.landing-img {
+  width: 250px;
+  height: 400px;
+}
