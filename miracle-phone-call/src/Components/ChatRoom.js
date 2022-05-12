@@ -1,6 +1,10 @@
 import Message from "./Message";
 import Navbar from "./Navbar";
+import Context from "../context/Context";
+import { useContext, useState } from "react";
+
 export default function ChatRoom(){
+let {message, setMessage} = useContext(Context)
   return(
     <div>
       <Navbar />
@@ -9,7 +13,9 @@ export default function ChatRoom(){
       </div>
       <form>
         <label>Message: 
-          <input></input>
+        <input type="text" onChange = {(event) => {
+                setMessage(event.target.value)
+              }} value = {message}></input>
           <button>send</button>
         </label>
       </form>

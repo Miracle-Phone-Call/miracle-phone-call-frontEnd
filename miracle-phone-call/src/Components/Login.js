@@ -6,8 +6,9 @@ import Context from "../context/Context";
 
 export default function Login() {
   // const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  // const [password, setPassword] = useState("")
   let {username, setUsername} = useContext(Context)
+  let {password, setPassword} = useContext(Context)
 
   return(
     <div>
