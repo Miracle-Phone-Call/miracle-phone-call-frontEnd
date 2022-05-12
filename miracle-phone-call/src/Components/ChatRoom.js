@@ -1,6 +1,6 @@
 import Message from "./Message";
 import Navbar from "./Navbar";
-export default function Chat(){
+export default function ChatRoom(){
   return(
     <div>
       <Navbar />
