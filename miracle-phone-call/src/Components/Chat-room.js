@@ -1,4 +1,5 @@
-import Chat from "./Chat";
+import Chatbar from "./Chatbar";
+import Navbar from "./Navbar";
 export default function ChatRoom(){
   return(
     <div>
@@ -6,9 +7,12 @@ export default function ChatRoom(){
       <form>
         <label>Find a Friend
           <input></input>
+          <buttton>search</buttton>
         </label>
       </form>
-      <Chat />
+      <Chatbar />
+      <Chatbar />
+      <Chatbar />
     </div>
   )
 }
