@@ -11,27 +11,25 @@ export default function Login() {
   let {password, setPassword} = useContext(Context)
 
   return(
-    <div>
-      <Logo />
+    <div className="login-container">
       <div className="login-body">
-        <div className="contents">
-          <form>
-          <label>Username: 
-              <input type="text" onChange = {(event) => {
-                setUsername(event.target.value)
-              }} value = {username}></input>
-            </label>
-            <br></br>
-            <label>Password: 
+        <div className="login-contents">
+          <Logo />
+          <form className="login-form">
+            <label>Username: </label>
+            <input type="text" onChange = {(event) => {
+              setUsername(event.target.value)
+            }} value = {username}></input>
+            
+            <label>Password: </label>
             <input type="password" onChange = {(event) => {
-                setPassword(event.target.value)
-              }} value = {password}></input>
-            </label>
+              setPassword(event.target.value)
+            }} value = {password}></input>
             <br></br>
             <Link to="/chats"><button>Login</button></Link>
           </form>
         </div>
-        <img src="../images/pexels-nicolas-postiglioni-1927155.jpg" className="img"/>
+        <img src="../images/pexels-nicolas-postiglioni-1927155.jpg" className="login-img"/>
       </div>
       <Footer />
     </div>
