@@ -10,46 +10,41 @@ export default function Signup() {
   const [password, setPassword] = useState("")
   const [repassword, setRePassword] = useState("")
 
-
   return(
-    <div>
-      <Logo />
+    <div className="signup-container">
       <div className="signup-body">
-        <div className="contents">
-          <form>
-            <label>Username: 
+        <div className="signup-contents">
+          <Logo />
+          <form className="signup-form">
+            <label>Username: </label>
               <input type="text" onChange = {(event) => {
                 setUsername(event.target.value)
               }} value = {username}></input>
-            </label>
-            <br></br>
-            <label>First Name: 
+
+            <label>First Name (optional): </label>
             <input type="text" onChange = {(event) => {
                 setFirstName(event.target.value)
               }} value = {firstName}></input> 
-            </label>
-            <br></br>
-            <label>Last Name: 
+            
+            <label>Last Name (optional): </label>
             <input type="text" onChange = {(event) => {
                 setLastName(event.target.value)
               }} value = {lastName}></input>
-            </label>
-            <br></br>
-            <label>Password: 
+            
+            <label>Password: </label>
             <input type="password" onChange = {(event) => {
                 setPassword(event.target.value)
               }} value = {password}></input>
-            </label>
-            <br></br>
-            <label>Re-Enter Password: 
+            
+            <label>Re-Enter Password: </label>
               <input type="password" onChange = {(event) => {
                 setRePassword(event.target.value)}} value={repassword}></input>
-            </label>
+            
             <br></br>
             <Link to="/login"><button>Create Account</button></Link>
           </form>
         </div>
-        <img src="../images/pexels-nicolas-postiglioni-1927155.jpg" className="img"/>
+        <img src="../images/pexels-nicolas-postiglioni-1927155.jpg" className="signup-img"/>
       </div>
       <Footer />
     </div>

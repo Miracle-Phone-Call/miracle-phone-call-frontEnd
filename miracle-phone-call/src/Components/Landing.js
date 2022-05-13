@@ -6,13 +6,13 @@ export default function Landing(){
   return (
   <div className="landing-container">
     <div className="landing-body">
-      <div className="contents">
+      <div className="landing-contents">
         <Logo />
-        <h4>Connect with family members with privacy</h4>
-        <Link to="/signup"><button>Sign UP</button></Link>
-        <Link to="/login"><button>LOGIN</button></Link>
+        <h4>Connect to family members with privacy</h4>
+        <Link to="/signup"><button>Sign Up</button></Link>
+        <Link to="/login"><button>Login</button></Link>
       </div>
-      <img src="../images/pexels-nicolas-postiglioni-1927155.jpg" className="img"/>
+      <img src="../images/pexels-nicolas-postiglioni-1927155.jpg" className="landing-img"/>
     </div>
     <Footer />
   </div>
