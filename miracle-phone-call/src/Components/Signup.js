@@ -10,11 +10,29 @@ export default function Signup() {
   const [password, setPassword] = useState("")
   const [repassword, setRePassword] = useState("")
 
+  function register () {
+    fetch ('http://localhost:3001/signup', {
+      method: 'POST',
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        username,
+        password,
+        repassword
+      })
+    }).then(res => res.json()).then(data => console.log(data));
+  }
+
   return(
     <div className="signup-container">
       <div className="signup-body">
         <div className="signup-contents">
           <Logo />
+          <p>Already have an account, go back to <Link to="/login">Login In</Link></p>
           <form className="signup-form">
             <label>Username: </label>
               <input type="text" onChange = {(event) => {
@@ -34,14 +52,16 @@ export default function Signup() {
             <label>Password: </label>
             <input type="password" onChange = {(event) => {
                 setPassword(event.target.value)
-              }} value = {password}></input>
+              }} value = {password}>
+
+            </input>
             
             <label>Re-Enter Password: </label>
               <input type="password" onChange = {(event) => {
-                setRePassword(event.target.value)}} value={repassword}></input>
-            
+                setRePassword(event.target.value)}} value={repassword}>
+              </input>
             <br></br>
-            <Link to="/login"><button>Create Account</button></Link>
+            <button onClick = {register}>Create Account</button>
           </form>
         </div>
         <img src="../images/pexels-nicolas-postiglioni-1927155.jpg" className="signup-img"/>
