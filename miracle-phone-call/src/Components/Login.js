@@ -26,10 +26,10 @@ export default function Login() {
   }
   return(
     <div>
-      <CardGroup className="card-group">
-        <Card body color="warning" className="justify-content-center">
+      <CardGroup>
+        <Card className="justify-content-center" >
         <h3>Miracle Phone Call</h3>
-        <p>Don't have an account? <Link to="/signup">Sign Up</Link> here</p>
+        
         <Form inline>
             <FormGroup className="mb-2 me-sm-2 mb-sm-0">
               <Label
@@ -65,10 +65,12 @@ export default function Login() {
                           }} value = {password}
               />
             </FormGroup>
-            <Button color="primary" className = "mt-5" onClick = {login}>Login</Button>
+            <Button color="primary" className = "m-5 " onClick = {login}>Login</Button>
+            
           </Form>
+          <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
         </Card>
-        <Card color="warning" >
+        <Card>
           <CardImg className="login-image" alt="Card image cap" src="../images/pexels-nicolas-postiglioni-1927155.jpg" />
         </Card> 
       </CardGroup>
