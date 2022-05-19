@@ -7,7 +7,6 @@ export default function ChatRoom(){
 let {message, setMessage} = useContext(Context)
   return(
     <div>
-      <Navbar />
       <div>
         <Message />
       </div>

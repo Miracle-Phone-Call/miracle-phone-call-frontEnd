@@ -2,20 +2,23 @@ import { useState } from "react"
 import Context from "./Context"
 
 export default function ContextProvider({children}){
-  const [username, setUsername] = useState("")
+  const [user, setUser] = useState(null)
   const [password, setPassword] = useState("")
   const [search, setSearch] = useState("")
   const [message, setMessage] = useState("")
+  const [allUsers, setAllUsers] = useState([])
 
   const context = {
-    username: username,
-    setUsername: setUsername,
-    password: password,
-    setPassword: setPassword,
-    search: search,
-    setSearch: setSearch,
-    message: message,
-    setMessage: setMessage
+    user,
+    setUser,
+    password,
+    setPassword,
+    search,
+    setSearch,
+    message,
+    setMessage,
+    allUsers, 
+    setAllUsers
   }
 
   return(
