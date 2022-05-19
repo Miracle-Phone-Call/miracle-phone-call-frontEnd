@@ -1,8 +1,8 @@
-import Logo from "./Logo";
+import '../Component-Styling/register.css'
 import Footer from "./Footer";
 import {Link} from "react-router-dom";
 import { useState } from "react";
-import { Card, CardBody, CardImg, CardGroup, CardTitle, Button, Form, FormGroup, Label, Input} from 'reactstrap'
+import { Card, CardImg, CardGroup, Button, Form, FormGroup, Label, Input} from 'reactstrap'
 
 export default function Signup() {
   const [username, setUsername] = useState("")
@@ -32,7 +32,7 @@ export default function Signup() {
 
     <div>
       <CardGroup>
-        <Card body color="light">
+        <Card className="justify-content-center" >
         <h3>Miracle Phone Call</h3>
         <Form inline>
         <FormGroup className="mb-2 me-sm-2 mb-sm-0">
@@ -45,7 +45,7 @@ export default function Signup() {
               <Input
                 id="exampleFirstname"
                 name="First Name"
-                placeholder="somethingKool"
+                placeholder="First Name"
                 type="text"
                 onChange = {(event) => {
                 setFirstName(event.target.value)
@@ -63,7 +63,7 @@ export default function Signup() {
               <Input
                 id="exampleLastName"
                 name="Last Name"
-                placeholder="somethingKool"
+                placeholder="Last Name"
                 type="text"
                 onChange = {(event) => {
                              setLastName(event.target.value)
@@ -120,11 +120,12 @@ export default function Signup() {
                               setRePassword(event.target.value)}} value={repassword}
               />
             </FormGroup>
-            <Button color="primary"  onClick = {register}> Register </Button>
+            <Button color="primary" className = "m-5 " onClick = {register}> Register </Button>
           </Form>
+          <p>Already have an account? <Link to="/login">Login</Link></p>
         </Card>
-        <Card body color="light">
-          <CardImg alt="Card image cap" src="../images/pexels-nicolas-postiglioni-1927155.jpg" top width="100%" />
+        <Card>
+          <CardImg className="register-image"alt="Card image cap" src="../images/pexels-nicolas-postiglioni-1927155.jpg" top width="100%" />
         </Card>
       </CardGroup>
       <Footer />
