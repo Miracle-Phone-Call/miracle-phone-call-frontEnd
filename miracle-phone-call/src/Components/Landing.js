@@ -11,12 +11,12 @@ export default function Landing(){
           <h3>Miracle Phone Call</h3>
           <br></br>
           <p>The mission of Miracle Phone Call is to connect undocumented immigrants, particularly those who are facing separation through deportation, using an end-to-end encryption messaging website. By privately connecting through our platform, undocumented immigrants can maintain connection with their loved ones without fear of their right to privacy being ignored.</p>
-          <Link to="/login"><Button block color="primary" size="lg">Login
+          <Link to="/login"><Button block color="warning" size="lg">Login
           </Button></Link>
           <br></br>
           <Link to="/signup"><Button
             block
-            color="primary"
+            color="warning"
             size="lg"
           >
             Sign Up

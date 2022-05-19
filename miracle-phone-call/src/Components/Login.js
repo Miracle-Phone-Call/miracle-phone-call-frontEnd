@@ -1,17 +1,20 @@
 import '../Component-Styling/login.css'
 import Footer from "./Footer";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import Context from "../context/Context";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Card, CardImg, CardGroup, Button, Form, FormGroup, Label, Input} from 'reactstrap'
 
 export default function Login() {
 
-  let {username, setUsername} = useContext(Context)
-  let {password, setPassword} = useContext(Context)
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  let {user, setUser} = useContext(Context)
 
+  const navigate = useNavigate();
 
-  function login () {
+  function login (event) {
+    event.preventDefault();
     fetch ('http://localhost:3001/login', {
       method: 'POST',
       headers: {
@@ -22,15 +25,19 @@ export default function Login() {
         username, 
         password
       })
-    }).then(res => res.json()).then(data => console.log(data));
+    }).then(res => res.json()).then(data => {
+      setUser(data);
+      navigate('/chats');
+    });
   }
+
   return(
     <div>
       <CardGroup>
         <Card className="justify-content-center" >
         <h3>Miracle Phone Call</h3>
         
-        <Form inline>
+        <Form inline onSubmit={login}>
             <FormGroup className="mb-2 me-sm-2 mb-sm-0">
               <Label
                 className="me-sm-2"
@@ -39,6 +46,7 @@ export default function Login() {
                 Username
               </Label>
               <Input
+                className='w-50 fields'
                 id="exampleUsername"
                 name="username"
                 placeholder="somethingKool"
@@ -56,6 +64,7 @@ export default function Login() {
                 Password
               </Label>
               <Input
+                className='w-50 fields'
                 id="examplePassword"
                 name="password"
                 placeholder="don't tell!"
@@ -65,7 +74,7 @@ export default function Login() {
                           }} value = {password}
               />
             </FormGroup>
-            <Button color="primary" className = "m-5 " onClick = {login}>Login</Button>
+            <Button color="warning" className = "m-5" type="submit">Login</Button>
             
           </Form>
           <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>

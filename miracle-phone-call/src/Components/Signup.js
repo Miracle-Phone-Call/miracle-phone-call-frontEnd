@@ -1,6 +1,6 @@
 import '../Component-Styling/register.css'
 import Footer from "./Footer";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { useState } from "react";
 import { Card, CardImg, CardGroup, Button, Form, FormGroup, Label, Input} from 'reactstrap'
 
@@ -10,6 +10,8 @@ export default function Signup() {
   const [lastName, setLastName] = useState("")
   const [password, setPassword] = useState("")
   const [repassword, setRePassword] = useState("")
+
+  const navigate = useNavigate();
 
   function register () {
     fetch ('http://localhost:3001/signup', {
@@ -26,6 +28,7 @@ export default function Signup() {
         repassword
       })
     }).then(res => res.json()).then(data => console.log(data));
+    navigate('/login')
   }
 
   return(
@@ -40,9 +43,10 @@ export default function Signup() {
                 className="me-sm-2"
                 for="exampleFirstname"
               >
-              First Name (Optional)
+              First Name
               </Label>
               <Input
+                className='w-50 fields'
                 id="exampleFirstname"
                 name="First Name"
                 placeholder="First Name"
@@ -58,9 +62,10 @@ export default function Signup() {
                 className="me-sm-2"
                 for="exampleLastName"
               >
-                Last Name (Optional)
+                Last Name
               </Label>
               <Input
+                className='w-50 fields'
                 id="exampleLastName"
                 name="Last Name"
                 placeholder="Last Name"
@@ -78,6 +83,7 @@ export default function Signup() {
                 Username
               </Label>
               <Input
+                className='w-50 fields'
                 id="exampleUsername"
                 name="username"
                 placeholder="somethingKool"
@@ -95,6 +101,7 @@ export default function Signup() {
                 Password
               </Label>
               <Input
+                className='w-50 fields'
                 id="examplePassword"
                 name="password"
                 placeholder="don't tell!"
@@ -112,6 +119,7 @@ export default function Signup() {
                 Re-Enter Password
               </Label>
               <Input
+                className='w-50 fields'
                 id="examplePassword"
                 name="password"
                 placeholder="seriously don't tell!"
@@ -120,7 +128,7 @@ export default function Signup() {
                               setRePassword(event.target.value)}} value={repassword}
               />
             </FormGroup>
-            <Button color="primary" className = "m-5 " onClick = {register}> Register </Button>
+            <Button color="warning" className = "m-5 " onClick = {register}> Register </Button>
           </Form>
           <p>Already have an account? <Link to="/login">Login</Link></p>
         </Card>
@@ -132,46 +140,4 @@ export default function Signup() {
     </div>
  
   )
-
-    // <div className="signup-container">
-    //   <div className="signup-body">
-    //     <div className="signup-contents">
-    //       <Logo />
-    //       <p>Already have an account, go back to <Link to="/login">Login In</Link></p>
-    //       <form className="signup-form">
-    //         <label>Username: </label>
-    //           <input type="text" onChange = {(event) => {
-    //             setUsername(event.target.value)
-    //           }} value = {username}></input>
-
-    //         <label>First Name (optional): </label>
-    //         <input type="text" onChange = {(event) => {
-    //             setFirstName(event.target.value)
-    //           }} value = {firstName}></input> 
-            
-    //         <label>Last Name (optional): </label>
-    //         <input type="text" onChange = {(event) => {
-    //             setLastName(event.target.value)
-    //           }} value = {lastName}></input>
-            
-    //         <label>Password: </label>
-    //         <input type="password" onChange = {(event) => {
-    //             setPassword(event.target.value)
-    //           }} value = {password}>
-
-    //         </input>
-            
-    //         <label>Re-Enter Password: </label>
-    //           <input type="password" onChange = {(event) => {
-    //             setRePassword(event.target.value)}} value={repassword}>
-    //           </input>
-    //         <br></br>
-    //         <button onClick = {register}>Create Account</button>
-    //       </form>
-    //     </div>
-    //     <img src="../images/pexels-nicolas-postiglioni-1927155.jpg" className="signup-img"/>
-    //   </div>
-    //   <Footer />
-    // </div>
-  
 }

@@ -1,12 +1,9 @@
-import {Link} from "react-router-dom";
+import '../Component-Styling/chats.css'
 
-export default function Chatbar(){
+export default function Chatbar({friend}){
   return(
-    <Link to="/chatroom">
-      <div className="chatbar">
-        <img/>
-        <h6>User</h6>
-      </div>
-    </Link>
+    <div className='contact-bar p-3'>
+      <p>{friend.username}</p>
+    </div>
   )
 }

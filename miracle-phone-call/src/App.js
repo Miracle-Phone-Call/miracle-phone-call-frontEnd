@@ -6,6 +6,9 @@ import Chats from './Components/Chats';
 import ChatRoom from './Components/ChatRoom';
 import Profile from './Components/Profile';
 import {Routes, Route, Link} from 'react-router-dom'
+import CustomNavbar from './Components/Navbar';
+import Chatbar from './Components/Chatbar';
+import Search from './Components/Search';
 
 function App() {
   return (
@@ -15,8 +18,9 @@ function App() {
         <Route path="/signup" element={<Signup />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/chats" element={<Chats />}/>
-        <Route path="/chatroom" element={<ChatRoom />}/>
         <Route path="/profile" element={<Profile />}/>
+        <Route path='/search' element = {<Search />}/>
+        
       </Routes>
     </div>
   );
