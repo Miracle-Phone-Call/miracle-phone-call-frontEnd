@@ -8,6 +8,7 @@ export default function ContextProvider({children}){
   const [message, setMessage] = useState("")
   const [allUsers, setAllUsers] = useState([])
   const [connectedPerson, setConnectedPerson] = useState({});
+  //const [showChat, setShowChat] = useState(false);
 
   const context = {
     user,
