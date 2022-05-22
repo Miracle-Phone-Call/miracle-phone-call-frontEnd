@@ -7,6 +7,7 @@ export default function ContextProvider({children}){
   const [search, setSearch] = useState("")
   const [message, setMessage] = useState("")
   const [allUsers, setAllUsers] = useState([])
+  const [connectedPerson, setConnectedPerson] = useState({});
 
   const context = {
     user,
@@ -18,7 +19,9 @@ export default function ContextProvider({children}){
     message,
     setMessage,
     allUsers, 
-    setAllUsers
+    setAllUsers,
+    connectedPerson,
+    setConnectedPerson
   }
 
   return(

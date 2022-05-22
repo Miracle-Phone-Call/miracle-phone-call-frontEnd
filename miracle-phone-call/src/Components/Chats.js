@@ -21,6 +21,8 @@ export default function Chats(){
   }, [])
 
   console.log(contacts);
+
+  
   
   return(
   <div>
