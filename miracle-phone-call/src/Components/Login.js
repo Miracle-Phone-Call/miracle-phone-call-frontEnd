@@ -27,6 +27,7 @@ export default function Login() {
       })
     }).then(res => res.json()).then(data => {
       setUser(data);
+      localStorage.setItem('user', JSON.stringify(data));
       navigate('/chats');
     });
   }

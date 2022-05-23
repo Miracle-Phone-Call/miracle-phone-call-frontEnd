@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import Context from "../context/Context";
 import { Button, Form, Input, Label, Modal, ModalBody, ModalFooter, FormGroup} from 'reactstrap'
 import CustomNavbar from './Navbar';
@@ -14,12 +14,12 @@ export default function Profile(){
   const [showBioForm , setShowBioForm] = useState(false)
   const [showResetPassword, setshowResetPassword] = useState(false)
   const [modal, setModal] = useState(false);
-  const {user} = useContext(Context)
+  const {user, setUser} = useContext(Context)
 
   const navigate = useNavigate();
+  /////
 
   async function updateBio () {
-    console.log(firstName, lastName);
     await fetch (`http://localhost:3001/users/${user.username}`, {
       method: 'PATCH',
       headers: {
@@ -29,7 +29,7 @@ export default function Profile(){
         firstName,
         lastName
       })
-    }).then(res => res.json()).then(data => console.log(data));
+    }).then(res => res.json()).then(data => setUser(data));
   }
 
   async function changePassword (e) {
@@ -44,7 +44,8 @@ export default function Profile(){
         newPassword, 
         retypeNewPassword
       })
-    }).then(res => res.json()).then(data => console.log(data));
+    }).then(res => res.json()).then(data => setUser(data));
+    navigate('/chats');
   }
 
   function deleteAccount () {
@@ -56,16 +57,17 @@ export default function Profile(){
     });
   }
   
-  return(
+  return( user.username ? (
     <>
     <CustomNavbar />
     <div className='container'>
       <div className='row'>
         <div className='col-sm-3 mt-5'>
         <img src = "https://pixy.org/download/4770772/" width={200} border-radius={50}></img>
+        <h4>{user.username}</h4>
         </div>
         <div className='col-sm-9 mt-5'>
-          {user ? <h2>Name:{user.first_name} {user.last_name}</h2> : null}
+          {user ? <h2>Name: {user.first_name} {user.last_name}</h2> : null}
           {!showBioForm ? null : ( 
             <div>
               <Label className="me-sm-2" for="firstName">
@@ -200,5 +202,6 @@ export default function Profile(){
 
     </div>
     </>
+   ) : null
   )
 }

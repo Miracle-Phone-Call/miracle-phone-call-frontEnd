@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import Context from "../context/Context"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {Navbar,
   NavItem,
   NavbarToggler,
@@ -20,9 +20,18 @@ const linkStyle = {
 };
 
 export default function CustomNavbar(){
-  let {user} = useContext(Context)
+  let {user, setUser} = useContext(Context)
   const [collapsed, setCollapsed] = useState(true)
+  
+  const navigate = useNavigate();
+  
   const toggleNavbar = () => setCollapsed(!collapsed);
+
+  function logOut () {
+    setUser(null);
+    localStorage.clear();
+    navigate('/login')
+  }
 
 
   return(
@@ -67,7 +76,7 @@ export default function CustomNavbar(){
               </Link>
             </DropdownItem>
             <DropdownItem divider />
-            <DropdownItem>
+            <DropdownItem onClick={logOut}>
               Log Out
             </DropdownItem>
           </DropdownMenu>
