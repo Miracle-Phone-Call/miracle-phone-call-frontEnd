@@ -8,7 +8,8 @@ export default function ContextProvider({children}){
   const [message, setMessage] = useState("")
   const [allUsers, setAllUsers] = useState([])
   const [connectedPerson, setConnectedPerson] = useState({});
-  //const [showChat, setShowChat] = useState(false);
+  const [showChat, setShowChat] = useState(false);
+  const [messageList, setMessageList] = useState([])
 
   const context = {
     user,
@@ -22,7 +23,11 @@ export default function ContextProvider({children}){
     allUsers, 
     setAllUsers,
     connectedPerson,
-    setConnectedPerson
+    setConnectedPerson,
+    showChat,
+    setShowChat,
+    messageList,
+    setMessageList
   }
 
   return(

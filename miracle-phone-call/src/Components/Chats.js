@@ -1,6 +1,7 @@
 import '../Component-Styling/chats.css'
 import Chatbar from "./Chatbar";
 import CustomNavbar from "./Navbar";
+import Chatbox from './Chatbox';
 import Context from "../context/Context";
 import { useContext, useEffect, useState } from "react";
 
@@ -34,6 +35,7 @@ export default function Chats(){
         </div>
         <div className='col-sm-10'>
           {/* MESSAGES ARRAY GOES HERE */}
+          <Chatbox />
         </div>
       </div>
     </div>

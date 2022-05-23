@@ -99,9 +99,16 @@
 .card {
   width: 500px;
 } */
+
 .chat-window {
-  height: 40px;
-  border: 1px solid #263238;
-  border-top: none;
+  border: 1px solid black;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 80vh;
+  display: flex;
+}
+
+.chat-footer {
+  justify-content: flex-end;
   display: flex;
 }
