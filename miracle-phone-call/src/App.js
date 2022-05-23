@@ -3,11 +3,9 @@ import Landing from './Components/Landing';
 import Signup from './Components/Signup';
 import Login from './Components/Login';
 import Chats from './Components/Chats';
-import ChatRoom from './Components/ChatRoom';
 import Profile from './Components/Profile';
-import {Routes, Route, Link} from 'react-router-dom'
-import CustomNavbar from './Components/Navbar';
-import Chatbar from './Components/Chatbar';
+import FriendProfile from './Components/FriendProfile'
+import {Routes, Route } from 'react-router-dom'
 import Search from './Components/Search';
 
 function App() {
@@ -20,7 +18,7 @@ function App() {
         <Route path="/chats" element={<Chats />}/>
         <Route path="/profile" element={<Profile />}/>
         <Route path='/search' element = {<Search />}/>
-        
+        <Route path='/profile/:username' element = {<FriendProfile/>} />
       </Routes>
     </div>
   );
