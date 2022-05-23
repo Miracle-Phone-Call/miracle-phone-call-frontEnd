@@ -7,6 +7,7 @@ export default function ContextProvider({children}){
   const [message, setMessage] = useState([])
   const [allUsers, setAllUsers] = useState([])
   const [viewPerson, setViewPerson] = useState({});
+  const [lang, setLang] = useState('english')
 
   const context = {
     user,
