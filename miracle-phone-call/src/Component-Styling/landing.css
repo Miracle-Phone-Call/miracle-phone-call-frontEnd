@@ -1,10 +1,12 @@
 .landing-image {
    padding-top: 40px;
-   padding-left: 100px;
    width: 400px; 
    height: 500px; 
    object-fit:fit; 
    object-position: 100% 0;
+   padding-left: 100px;
+   margin-left:100px;
+
 }
 
 .Appimg {
@@ -49,4 +51,7 @@
     height: 15vw;
     object-fit: cover;
     padding-right: 200px;
+  }
+
+  .img-card {
   }

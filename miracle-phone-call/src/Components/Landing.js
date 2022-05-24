@@ -9,8 +9,8 @@ export default function Landing(){
       <br></br>
       <CardGroup className="topPage img-fluid">
       {/* <Card className="border-0" style={{backgroundColor: '#D4AEE6', borderRadius: 5}}>   </Card> */}
-      <Card className="border-0 card-img-top justify-content-center" style={{}}>
-          <CardImg className='landing-image' style={{borderRadius: 5}} alt="Card image cap"  src="../images/hugs.png"/>
+      <Card className="img-card border-0 card-img-top justify-content-center" style={{}}>
+          <CardImg className='landing-image shadow p-3 mb-5 bg-white rounded' style={{borderRadius: 5}} alt="Card image cap"  src="../images/hugs.png"/>
           <br></br>
         </Card> 
      

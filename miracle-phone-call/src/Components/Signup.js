@@ -128,7 +128,8 @@ export default function Signup() {
                               setRePassword(event.target.value)}} value={repassword}
               />
             </FormGroup>
-            <Button color="warning" className = "m-5 " onClick = {register}> Register </Button>
+            <Button color="warning" className = "m-5 " onClick = {register} 
+            style={{backgroundColor: '#514DE9'}}> Register </Button>
           </Form>
           <p>Already have an account? <Link to="/login">Login</Link></p>
         </Card>
