@@ -1,5 +1,5 @@
 .landing-image {
-   
+   padding-left: 50px;
 }
 
 .Appimg {
@@ -11,17 +11,17 @@
 }
 
 .pageBody{
-    background-color: #D4AEE6
+    background-color: #ffffff
 }
 
 .Appdesc {
     background-color: #AB0AF7
 }
 
-.topPage {
+/* .topPage {
     padding-top: 50px;
     padding-bottom: 50px;
-}
+} */
 
 .signbutton {
   
@@ -30,3 +30,7 @@
 .loginbutton {
 
     }
+.footer {
+    bottom: 0;
+      
+  }

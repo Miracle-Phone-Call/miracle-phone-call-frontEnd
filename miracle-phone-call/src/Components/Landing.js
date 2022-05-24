@@ -7,31 +7,15 @@ export default function Landing(){
   return (
     <div className="pageBody" >
       <CardGroup className="topPage img-fluid">
-      <Card className="border-0" style={{backgroundColor: '#D4AEE6', borderRadius: 50}}>   </Card>
-      <Card className="border-0 card-img-top" style={{backgroundColor: '#AB0AF7', borderRadius: 50}}>
-          <CardImg style={{borderRadius: 50}} alt="Card image cap"  src="../images/miracleLogo.png"/>
-        </Card> 
-     
-        <Card className="justify-content-center border-0" style={{backgroundColor: '#AB0AF7' , color: 'white', borderRadius: 50}}>
-        <img src="../images/angeltelephone.png" height="20%" width="20%" 
-        style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
-        <h2 style={{textShadow: '2px 2px blue'}}>Miracle Phone Call</h2>
+      <Card className="border-0" style={{backgroundColor: '#D4AEE6', borderRadius: 5}}>   </Card>
+      <Card className="border-0 card-img-top justify-content-center" style={{ borderRadius: 5}}>
+          <CardImg className='landing-image' style={{borderRadius: 5,}} alt="Card image cap"  src="../images/hugs.png"/>
           <br></br>
-          
-          <p style={{fontSize: 16}}>The mission of Miracle Phone Call is to connect undocumented immigrants, particularly those who are facing separation through deportation, using an end-to-end encryption messaging website.</p>
-        </Card>
-       
-        <Card className="border-0" style={{backgroundColor: '#D4AEE6'}}>
-
-        </Card>
-     
-      </CardGroup>
-    
-      <Link to="/signup"><Button
+          <Link to="/signup"><Button
             className="signbutton"
             color="primary"
             size="lg"
-            style={{backgroundColor: '#514DE9', borderRadius: 45}}
+            style={{backgroundColor: '#514DE9', borderRadius: 5, width: 150}}
           >
             Sign Up
           </Button></Link>
@@ -39,9 +23,27 @@ export default function Landing(){
           <br></br>
     
       <Link to="/login"><Button className="loginbutton" color="primary" size="lg"
-       style={{backgroundColor: '#514DE9', borderRadius: 45}}
+       style={{backgroundColor: '#514DE9', borderRadius: 5, width: 150}}
       >Login
           </Button></Link>
+        </Card> 
+     
+        <Card className="justify-content-top border-0" style={{color: 'black', borderRadius: 5}}>
+        <img src="../images/Miracle Phone Call Logo wo text (1).png "  
+        style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
+        <h2>Miracle Phone Call</h2>
+          <br></br>
+          
+          <p style={{fontSize: 16}}>The mission of Miracle Phone Call is to connect undocumented immigrants, particularly those who are facing separation through deportation, using an end-to-end encryption messaging website.</p>
+        </Card>
+       
+        <Card className="border-0" style={{}}>
+
+        </Card>
+     
+      </CardGroup>
+    
+      
           <br></br>
           <br></br>
       <Footer />
