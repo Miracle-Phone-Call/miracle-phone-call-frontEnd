@@ -1,5 +1,10 @@
 .landing-image {
-   padding-left: 50px;
+   padding-top: 40px;
+   padding-left: 100px;
+   width: 400px; 
+   height: 500px; 
+   object-fit:fit; 
+   object-position: 100% 0;
 }
 
 .Appimg {
@@ -11,7 +16,7 @@
 }
 
 .pageBody{
-    background-color: #ffffff
+    background-color: #ebd6f7
 }
 
 .Appdesc {
@@ -28,9 +33,20 @@
     }
     
 .loginbutton {
-
-    }
+  padding-bottom: 10px;
+}
 .footer {
     bottom: 0;
       
+  }
+
+  .mission {
+    padding: 70px;
+  }
+
+  .content-card {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+    padding-right: 200px;
   }

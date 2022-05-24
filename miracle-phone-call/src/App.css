@@ -80,7 +80,6 @@
 
 .footer {
   bottom: 0;
-
 }
 
 .profile-form {
@@ -104,3 +103,9 @@
 .card {
   width: 500px;
 } */
+
+.footer-button {
+  position:absolute;
+  bottom:0;
+  left:0;
+}

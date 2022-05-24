@@ -6,11 +6,20 @@ import {Card, CardGroup, CardImg, Button, TabContent} from "reactstrap"
 export default function Landing(){
   return (
     <div className="pageBody" >
+      <br></br>
       <CardGroup className="topPage img-fluid">
-      <Card className="border-0" style={{backgroundColor: '#D4AEE6', borderRadius: 5}}>   </Card>
-      <Card className="border-0 card-img-top justify-content-center" style={{ borderRadius: 5}}>
-          <CardImg className='landing-image' style={{borderRadius: 5,}} alt="Card image cap"  src="../images/hugs.png"/>
+      {/* <Card className="border-0" style={{backgroundColor: '#D4AEE6', borderRadius: 5}}>   </Card> */}
+      <Card className="border-0 card-img-top justify-content-center" style={{}}>
+          <CardImg className='landing-image' style={{borderRadius: 5}} alt="Card image cap"  src="../images/hugs.png"/>
           <br></br>
+        </Card> 
+     
+        <Card className="border-0" style={{color: 'black'}}>
+        <img src="../images/Miracle Phone Call Logo wo text (1).png "  
+        style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 150}}/>
+        <h2>Miracle Phone Call</h2>
+          
+          <p className="mission" style={{fontSize: 16}}>The mission of Miracle Phone Call is to connect undocumented immigrants, particularly those who are facing separation through deportation, using an end-to-end encryption messaging website.</p>
           <Link to="/signup"><Button
             className="signbutton"
             color="primary"
@@ -20,26 +29,19 @@ export default function Landing(){
             Sign Up
           </Button></Link>
           <br></br>
-          <br></br>
     
       <Link to="/login"><Button className="loginbutton" color="primary" size="lg"
        style={{backgroundColor: '#514DE9', borderRadius: 5, width: 150}}
       >Login
           </Button></Link>
-        </Card> 
-     
-        <Card className="justify-content-top border-0" style={{color: 'black', borderRadius: 5}}>
-        <img src="../images/Miracle Phone Call Logo wo text (1).png "  
-        style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}/>
-        <h2>Miracle Phone Call</h2>
           <br></br>
-          
-          <p style={{fontSize: 16}}>The mission of Miracle Phone Call is to connect undocumented immigrants, particularly those who are facing separation through deportation, using an end-to-end encryption messaging website.</p>
+          <br></br>
+          <br></br>
         </Card>
        
-        <Card className="border-0" style={{}}>
+        {/* <Card className="border-0" style={{}}>
 
-        </Card>
+        </Card> */}
      
       </CardGroup>
     
