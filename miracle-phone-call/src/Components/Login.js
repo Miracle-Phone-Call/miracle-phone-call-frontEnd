@@ -35,9 +35,8 @@ export default function Login() {
   return(
     <div>
       <CardGroup>
-        <Card className="justify-content-center" >
+        <Card className="justify-content-center border-0 login-card" >
         <h3>Miracle Phone Call</h3>
-        
         <Form inline onSubmit={login}>
             <FormGroup className="mb-2 me-sm-2 mb-sm-0">
               <Label
@@ -80,8 +79,8 @@ export default function Login() {
           </Form>
           <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
         </Card>
-        <Card>
-          <CardImg className="login-image" alt="Card image cap" src="../images/pexels-nicolas-postiglioni-1927155.jpg" />
+        <Card className='image-card-login border-0'>
+          <CardImg className="login-image" alt="Card image cap" src="../images/pexels-nicolas-postiglioni-1927155.jpg" top width= "100%"/>
         </Card> 
       </CardGroup>
       <Footer />
