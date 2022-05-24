@@ -1,3 +1,4 @@
+import '../Component-Styling/navbar.css'
 import { useContext, useState } from "react"
 import Context from "../context/Context"
 import { Link, useNavigate } from "react-router-dom";
@@ -37,8 +38,8 @@ export default function CustomNavbar(){
   return(
     <div>
   <Navbar
-    className="sticky-top"
-    color="warning"
+    className="sticky-top nav-bar-color"
+    // color="warning"
     expand="md"
     // fixed="top"
     light

@@ -10,15 +10,17 @@
 
 .chatbar:hover {
     background-color: #f2f4f6;
+    
 }
 
 .contact-sidebar {
     border-radius: 10px;
-    background-color: #fbe589;
+    background-color: #00c2cb;
+    color: white;
 }
 
 .contact-bar:hover {
     border-radius: 20px;
-    background-color: #f0ad4e;
+    background-color: #d19eee;
     cursor: pointer
 }
