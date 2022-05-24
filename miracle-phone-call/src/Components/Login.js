@@ -75,7 +75,7 @@ export default function Login() {
                           }} value = {password}
               />
             </FormGroup>
-            <Button color="warning" className = "m-5" type="submit">Login</Button>
+            <Button color="primary" className = "m-5" type="submit" style={{backgroundColor: '#514DE9'}}>Login</Button>
             
           </Form>
           <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
