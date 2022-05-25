@@ -3,7 +3,7 @@ import Footer from "./Footer"
 import {Link} from "react-router-dom"
 import {Card, CardGroup, CardImg, Button, TabContent} from "reactstrap"
 
-export default function Landing(){
+export default function Landing(){ 
   return (
     <div className="pageBody" >
       <br></br>
