@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import Context from "../context/Context";
 import { Button, Form, Input, Label, Modal, ModalBody, ModalFooter, FormGroup} from 'reactstrap'
 import CustomNavbar from './Navbar';
