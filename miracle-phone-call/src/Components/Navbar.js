@@ -54,7 +54,7 @@ export default function CustomNavbar(){
       >
         <NavItem>
           <Link to="/search" style={linkStyle}>{/* {`/search/${user.username}`} */}
-            Find Friends
+            Find Family
           </Link>
         </NavItem>
         <NavItem>
@@ -66,7 +66,7 @@ export default function CustomNavbar(){
       </Nav>
       <img src="https://pixy.org/download/4770772/" width = {30}></img>
       <UncontrolledDropdown inNavbar nav>
-          <DropdownToggle caret>
+          <DropdownToggle caret style={{backgroundColor: "#514de9"}} className="mr-5">
             {user.username}
           </DropdownToggle>
           <DropdownMenu>
