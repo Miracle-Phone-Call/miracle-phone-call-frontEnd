@@ -1,7 +1,9 @@
 
 
 .login-image {
-  height: 99.5vh;
+  /* height: 99.5vh; */
+  height: 70vh;
+  margin-top: 10vh;
 }
 .each-card {
   margin: 20px;
@@ -9,4 +11,14 @@
 
 .fields {
   margin: 0 auto;
+}
+
+.login-card {
+  margin-left:15vw;
+  margin-top: 10vh;
+}
+
+.image-card-login {
+  margin-right:20vw;
+  margin-left: 5vw;
 }

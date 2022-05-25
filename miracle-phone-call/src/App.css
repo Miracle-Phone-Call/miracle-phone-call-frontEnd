@@ -1,5 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
 .App {
   text-align: center;
+  font-family: Poppins
 }
 
 .navbar {
@@ -74,7 +79,6 @@
 }
 
 .footer {
-  position: absolute;
   bottom: 0;
 }
 
@@ -99,3 +103,9 @@
 .card {
   width: 500px;
 } */
+
+.footer-button {
+  position:absolute;
+  /* bottom:0; */
+  left:0;
+}

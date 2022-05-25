@@ -34,8 +34,8 @@ export default function Signup() {
   return(
 
     <div>
-      <CardGroup>
-        <Card className="justify-content-center" >
+      <CardGroup >
+        <Card className="justify-content-center border-0 signup-card">
         <h3>Miracle Phone Call</h3>
         <Form inline>
         <FormGroup className="mb-2 me-sm-2 mb-sm-0">
@@ -128,11 +128,12 @@ export default function Signup() {
                               setRePassword(event.target.value)}} value={repassword}
               />
             </FormGroup>
-            <Button color="warning" className = "m-5 " onClick = {register}> Register </Button>
+            <Button color="primary" className = "m-5 " onClick = {register} 
+            style={{backgroundColor: '#514DE9'}}> Register </Button>
           </Form>
           <p>Already have an account? <Link to="/login">Login</Link></p>
         </Card>
-        <Card>
+        <Card className='img-card-signup border-0'>
           <CardImg className="register-image"alt="Card image cap" src="../images/pexels-nicolas-postiglioni-1927155.jpg" top width="100%" />
         </Card>
       </CardGroup>
