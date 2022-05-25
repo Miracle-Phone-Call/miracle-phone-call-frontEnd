@@ -24,6 +24,17 @@ export default function SearchResult (prop) {
                 friend_id : id
             })
         }).then(res => res.json()).then(data => console.log(data))
+
+        await fetch('http://localhost:3001/chat', {
+            method: "POST",
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({
+                sender_id : user.id,
+                reciever_id : id
+            })
+        }).then(res => res.json()).then(data => console.log(data))
     }
 
     return (

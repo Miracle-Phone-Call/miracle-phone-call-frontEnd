@@ -4,7 +4,6 @@ import Context from "./Context"
 export default function ContextProvider({children}){
   const [user, setUser] = useState(null)
   const [search, setSearch] = useState("")
-  const [message, setMessage] = useState([])
   const [allUsers, setAllUsers] = useState([])
   const [viewPerson, setViewPerson] = useState({});
 
@@ -13,8 +12,6 @@ export default function ContextProvider({children}){
     setUser,
     search,
     setSearch,
-    message,
-    setMessage,
     allUsers, 
     setAllUsers,
     viewPerson, 
