@@ -15,7 +15,7 @@ export default function Landing(){
         </Card> 
      
         <Card className="border-0" style={{color: 'black'}}>
-        <img src="../images/Miracle Phone Call Logo wo text (4).png "  
+        <img src="../images/Miracle Phone Call Logo wo text (6).png "  
         style={{display: 'block', marginLeft: 'auto', marginRight: 'auto', width: 150}}/>
         <h2>Miracle Phone Call</h2>
           
