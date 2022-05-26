@@ -1,3 +1,4 @@
+import '../Component-Styling/navbar.css'
 import { useContext, useState } from "react"
 import Context from "../context/Context"
 import { Link, useNavigate } from "react-router-dom";
@@ -37,8 +38,8 @@ export default function CustomNavbar(){
   return(
     <div>
   <Navbar
-    className="sticky-top"
-    color="warning"
+    className="sticky-top nav-bar-color"
+    // color="warning"
     expand="md"
     // fixed="top"
     light
@@ -54,7 +55,7 @@ export default function CustomNavbar(){
       >
         <NavItem>
           <Link to="/search" style={linkStyle}>{/* {`/search/${user.username}`} */}
-            Find Friends
+            Find Family
           </Link>
         </NavItem>
         <NavItem>
@@ -66,7 +67,7 @@ export default function CustomNavbar(){
       </Nav>
       <img src="https://pixy.org/download/4770772/" width = {30}></img>
       <UncontrolledDropdown inNavbar nav>
-          <DropdownToggle caret>
+          <DropdownToggle caret style={{backgroundColor: "#514de9"}} className="mr-5">
             {user.username}
           </DropdownToggle>
           <DropdownMenu>

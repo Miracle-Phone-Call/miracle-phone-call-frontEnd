@@ -1,6 +1,7 @@
+import '../Component-Styling/profile.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import Context from "../context/Context";
 import { Button, Form, Input, Label, Modal, ModalBody, ModalFooter, FormGroup} from 'reactstrap'
 import CustomNavbar from './Navbar';
@@ -8,6 +9,7 @@ import CustomNavbar from './Navbar';
 export default function Profile(){
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
+  const [bio, setBio] = useState("")
   const [currentPassword, setCurrentPassword] = useState("")
   const [newPassword, setNewPassword] = useState("")
   const [retypeNewPassword, setRetypeNewPassword] = useState("")
@@ -27,7 +29,8 @@ export default function Profile(){
       },
       body: JSON.stringify({
         firstName,
-        lastName
+        lastName, 
+        bio
       })
     }).then(res => res.json()).then(data => setUser(data));
   }
@@ -60,13 +63,13 @@ export default function Profile(){
   return( user.username ? (
     <>
     <CustomNavbar />
-    <div className='container'>
-      <div className='row'>
-        <div className='col-sm-3 mt-5'>
-        <img src = "https://pixy.org/download/4770772/" width={200} border-radius={50}></img>
+    <div className='container container-profile'>
+      <div className='column'>
+        <div className='col-sm-3 mt-5 image-profile-div'>
+        <img src = "https://pixy.org/download/4770772/" className="profile-img" width={200} border-radius={50}></img>
         <h4>{user.username}</h4>
         </div>
-        <div className='col-sm-9 mt-5'>
+        <div className='col-sm-9 mt-5 form-profile-content'>
           {user ? <h2>Name: {user.first_name} {user.last_name}</h2> : null}
           {!showBioForm ? null : ( 
             <div>
@@ -76,7 +79,7 @@ export default function Profile(){
               <Input
                 id="firstName"
                 name="First Name"
-                placeholder= "john"
+                placeholder= "Change first name"
                 type="text"
                 onChange = {(event) => {setFirstName(event.target.value)}} 
                 value = {firstName}
@@ -87,10 +90,21 @@ export default function Profile(){
               <Input
                 id="lastName"
                 name="Last Name"
-                placeholder= "Doe"
+                placeholder= "Change last name"
                 type="text"
                 onChange = {(event) => {setLastName(event.target.value)}} 
                 value = {lastName}
+              />
+               <Label className="me-sm-2" for="bio">
+              Biography :
+              </Label>
+              <Input
+                id="bio"
+                name="bio"
+                placeholder= "Add a Bio"
+                type="text"
+                onChange = {(event) => {setBio(event.target.value)}} 
+                value = {bio}
               />
               <div>
               <Button className="m-5" color="warning" onClick={() => setShowBioForm(false)}>

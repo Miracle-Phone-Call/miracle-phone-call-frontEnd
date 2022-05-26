@@ -8,6 +8,12 @@ import FriendProfile from './Components/FriendProfile'
 import {Routes, Route } from 'react-router-dom'
 import Search from './Components/Search';
 
+////////////////////////////////////////////////////
+//Socket IO Front End
+import io from 'socket.io-client'
+const socket = io.connect("http//localhost:3001")
+/////////////////////////////////////////////////////
+
 function App() {
   return (
     <div className="App">

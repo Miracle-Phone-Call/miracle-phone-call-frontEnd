@@ -1,13 +1,14 @@
 import CustomNavbar from "./Navbar";
 import Context from "../context/Context";
 import SearchResult from "./SearchResult";
+import ProfileCard from "./ProfileCard";
 import { useContext, useEffect } from "react";
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button, Input } from 'reactstrap'
+import { Input } from 'reactstrap'
 import { useNavigate } from "react-router-dom";
 
 
 export default function Search () {
-    let{search, setSearch, allUsers, setAllUsers, user, setViewPerson} = useContext(Context)
+    let{search, setSearch, allUsers, setAllUsers, user } = useContext(Context)
     
     const navigate = useNavigate()
 
@@ -19,8 +20,8 @@ export default function Search () {
       navigate(`/profile/${username}`)
     }
 
-    let filteredUsers = allUsers.filter(friend => friend.username.includes(search));
-    let initialUser = allUsers.slice(0, 5)
+    let filteredUsers = allUsers.filter(friend => friend.username.toLowerCase().includes(search) || friend.first_name.toLowerCase().includes(search));
+    let initialUser = allUsers.slice(0, 6)
     
     return(
         <div>
@@ -33,37 +34,17 @@ export default function Search () {
             value = {search} 
           />
           {search !== "" ? (
-            filteredUsers && <SearchResult array = {filteredUsers} />
+            filteredUsers && <SearchResult array = {filteredUsers} viewProfile= {viewProfile}/>
           ) : (
             <div>
-              <h3>People you might know</h3>
-                {initialUser.map(friend => (
-                  <div>
-                    <Card
-                    >
-                      <CardBody>
-                        <CardTitle tag="h5">
-                          {friend.first_name} {friend.last_name}
-                        </CardTitle>
-                        <CardSubtitle
-                          className="mb-2 text-muted"
-                          tag="h6"
-                        >
-                          {friend.username}
-                        </CardSubtitle>
-                        <CardText>
-                          Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </CardText>
-                        <Button onClick={() => {
-                          viewProfile(friend.username) 
-                          setViewPerson(friend);
-                          }} >
-                          View Profile
-                        </Button>
-                      </CardBody>
-                    </Card>
-                  </div>
-              ))}
+              <h3 className="pt-5">People you might know</h3>
+              <div className="container-fluid">
+                <div className="row">
+                  {initialUser.map(data => (
+                    <ProfileCard data = {data} key = {data.id} viewProfile = {viewProfile}/>
+                  ))}
+                </div>
+              </div>
             </div>
           )}
         </div>
