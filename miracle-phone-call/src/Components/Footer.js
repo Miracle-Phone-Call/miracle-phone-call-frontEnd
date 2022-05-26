@@ -1,7 +1,8 @@
+import LanguageChange from "./Language"
 export default function Footer(){
   return(
     <div className="footer">
-      <button>Espanol</button>
+      <LanguageChange />
     </div>
   )
 }
