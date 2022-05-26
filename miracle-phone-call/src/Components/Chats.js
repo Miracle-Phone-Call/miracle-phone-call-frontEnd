@@ -128,6 +128,7 @@ export default function Chats(){
                   onChange={(e) => setNewMessage(e.target.value)}
                   value = {newMessage}> </textarea>
                   <button className='chatSubmitButton' onClick={handleSubmit}>Send</button>
+                  <button><a href="http://localhost:3030">Video</a></button>
                 </div>
               </div>
             </div>
