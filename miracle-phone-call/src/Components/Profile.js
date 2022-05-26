@@ -1,3 +1,4 @@
+import '../Component-Styling/profile.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
@@ -60,13 +61,13 @@ export default function Profile(){
   return( user.username ? (
     <>
     <CustomNavbar />
-    <div className='container'>
-      <div className='row'>
-        <div className='col-sm-3 mt-5'>
-        <img src = "https://pixy.org/download/4770772/" width={200} border-radius={50}></img>
+    <div className='container container-profile'>
+      <div className='column'>
+        <div className='col-sm-3 mt-5 image-profile-div'>
+        <img src = "https://pixy.org/download/4770772/" className="profile-img" width={200} border-radius={50}></img>
         <h4>{user.username}</h4>
         </div>
-        <div className='col-sm-9 mt-5'>
+        <div className='col-sm-9 mt-5 form-profile-content'>
           {user ? <h2>Name: {user.first_name} {user.last_name}</h2> : null}
           {!showBioForm ? null : ( 
             <div>
