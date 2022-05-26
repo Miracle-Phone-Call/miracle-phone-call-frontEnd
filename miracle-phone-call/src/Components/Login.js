@@ -78,12 +78,12 @@ export default function Login() {
             
           </Form>
           <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
+          <Footer />
         </Card>
         <Card className='image-card-login border-0'>
           <CardImg className="login-image" alt="Card image cap" src="../images/pexels-nicolas-postiglioni-1927155.jpg" top width= "100%"/>
         </Card> 
       </CardGroup>
-      <Footer />
     </div>
   )
 }

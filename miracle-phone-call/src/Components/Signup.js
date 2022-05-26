@@ -132,12 +132,12 @@ export default function Signup() {
             style={{backgroundColor: '#514DE9'}}> Register </Button>
           </Form>
           <p>Already have an account? <Link to="/login">Login</Link></p>
+          <Footer />
         </Card>
         <Card className='img-card-signup border-0'>
           <CardImg className="register-image"alt="Card image cap" src="../images/pexels-nicolas-postiglioni-1927155.jpg" top width="100%" />
         </Card>
       </CardGroup>
-      <Footer />
     </div>
  
   )

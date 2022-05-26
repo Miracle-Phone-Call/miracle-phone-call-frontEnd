@@ -21,24 +21,20 @@ export default function Landing(){
           
           <p className="mission" style={{fontSize: 16}}>The mission of Miracle Phone Call is to connect undocumented immigrants, particularly those who are facing separation through deportation, using an end-to-end encryption messaging website.</p>
           <Link to="/signup"><Button
-            className="signbutton"
+            className="signbutton m-2"
             color="primary"
             size="lg"
             style={{backgroundColor: '#514DE9', borderRadius: 5, width: 150}}
           >
             Sign Up
           </Button></Link>
-          <br></br>
     
-      <Link to="/login"><Button className="loginbutton" color="primary" size="lg"
+      <Link to="/login"><Button className="loginbutton m-4" color="primary" size="lg"
        style={{backgroundColor: '#514DE9', borderRadius: 5, width: 150}}
       >Login
           </Button></Link>
-          <br></br>
-          <br></br>
-          <br></br>
+          <Footer />
         </Card>
-       
         {/* <Card className="border-0" style={{}}>
 
         </Card> */}
@@ -48,7 +44,7 @@ export default function Landing(){
       
           <br></br>
           <br></br>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   // <div className="landing-container">
   //   <div className="landing-body">
