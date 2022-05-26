@@ -9,6 +9,7 @@ import CustomNavbar from './Navbar';
 export default function Profile(){
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
+  const [bio, setBio] = useState("")
   const [currentPassword, setCurrentPassword] = useState("")
   const [newPassword, setNewPassword] = useState("")
   const [retypeNewPassword, setRetypeNewPassword] = useState("")
@@ -28,7 +29,8 @@ export default function Profile(){
       },
       body: JSON.stringify({
         firstName,
-        lastName
+        lastName, 
+        bio
       })
     }).then(res => res.json()).then(data => setUser(data));
   }
@@ -77,7 +79,7 @@ export default function Profile(){
               <Input
                 id="firstName"
                 name="First Name"
-                placeholder= "john"
+                placeholder= "Change first name"
                 type="text"
                 onChange = {(event) => {setFirstName(event.target.value)}} 
                 value = {firstName}
@@ -88,10 +90,21 @@ export default function Profile(){
               <Input
                 id="lastName"
                 name="Last Name"
-                placeholder= "Doe"
+                placeholder= "Change last name"
                 type="text"
                 onChange = {(event) => {setLastName(event.target.value)}} 
                 value = {lastName}
+              />
+               <Label className="me-sm-2" for="bio">
+              Biography :
+              </Label>
+              <Input
+                id="bio"
+                name="bio"
+                placeholder= "Add a Bio"
+                type="text"
+                onChange = {(event) => {setBio(event.target.value)}} 
+                value = {bio}
               />
               <div>
               <Button className="m-5" color="warning" onClick={() => setShowBioForm(false)}>

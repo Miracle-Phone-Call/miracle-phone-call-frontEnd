@@ -19,6 +19,10 @@ export default function Chats(){
 
   const scrollRef = useRef()
 
+  const getMessages = async () => {
+    await fetch(`http://localhost:3001/messages/${currentChat.id}`).then(res => res.json()).then(data => setMessages(data))
+  }
+
   ////////
   useEffect(() => {
     socket.current = io("ws://localhost:8900")
@@ -28,15 +32,11 @@ export default function Chats(){
         message: data.message,
       })
     })
-    console.log(arrivalMessage)
-  }, [arrivalMessage]);
-
-  ////
-  useEffect(() => {
-    arrivalMessage && currentChat?.members.includes(arrivalMessage.sender_id) &&
-    setMessages((prev) => [...prev, arrivalMessage])
-  }, [arrivalMessage, currentChat])
-
+    getMessages()
+    // arrivalMessage && currentChat?.members.includes(arrivalMessage.sender_id) &&
+    // setMessages((prev) => [...prev, arrivalMessage]) 
+  }, [arrivalMessage, currentChat]); //add messages dependency when you presenting
+console.log(messages)
 
   //////
   useEffect(() => {
@@ -54,9 +54,7 @@ export default function Chats(){
   }, [])
 
   useEffect(() => {
-    const getMessages = async () => {
-      await fetch(`http://localhost:3001/messages/${currentChat.id}`).then(res => res.json()).then(data => setMessages(data))
-    }
+    
     getMessages()
   }, [currentChat]);
 
@@ -85,7 +83,6 @@ export default function Chats(){
     }).then(res => res.json()).then(data => {
       setMessages([...messages, data]);
       setNewMessage("");
-      console.log(messages)
     })
   }
 
