@@ -1,16 +1,12 @@
 import { useContext } from "react"
 import Context from "../context/Context"
 import { Button } from 'reactstrap'
+import '../Component-Styling/search.css'
 
 export default function SearchResult (prop) {
 
-    const {user} = useContext(Context);
+    const {user, setViewPerson} = useContext(Context);
 
-    //REMEMBER TO TAKE THIS OUT AND ADD REAL USER CONTEXT
-    // let user = {
-    //     id : 9,
-    //     username : "josemaz"
-    // }
 
     
     async function addContact (id) {
@@ -38,13 +34,18 @@ export default function SearchResult (prop) {
     }
 
     return (
-        <div>
+        <div className="searchResultBox">
       {prop.array?.map(contact => {
           return (
             <div className="chatbar m-5 p-3">
-                <p>{contact.username}</p>
-                <p>{contact.first_name} {contact.last_name}</p>
-                <Button color="warning" onClick={() => addContact(contact.id)}> Connect +</Button>
+                <p>
+                    {contact.username}
+                </p>
+                <p>{contact.first_name.toUpperCase()} {contact.last_name.toUpperCase()}</p>
+                <Button style={{backgroundColor: "#514de9"}} onClick={() => {
+                    prop.viewProfile(contact.username)
+                    setViewPerson(contact)
+                }}> View Profile </Button>
             </div>
           )
       })}
