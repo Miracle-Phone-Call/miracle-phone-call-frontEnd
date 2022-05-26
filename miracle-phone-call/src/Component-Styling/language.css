@@ -3,3 +3,17 @@ body { top: 0px !important; }
 
 .goog-gt-tt.skiptranslate {display: none !important;}
 
+/* .goog-tooltip {
+  display: none !important;
+}
+.goog-tooltip:hover {
+  display: none !important;
+}
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important; 
+  box-shadow: none !important;
+} */
+
+#goog-gt-tt, .goog-te-balloon-frame{display: none !important;} 
+.goog-text-highlight { background: none !important; box-shadow: none !important;}
