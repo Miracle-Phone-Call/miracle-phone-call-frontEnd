@@ -31,7 +31,7 @@ export default function CustomNavbar(){
   function logOut () {
     setUser(null);
     localStorage.clear();
-    navigate('/login')
+    navigate('/')
   }
 
 
